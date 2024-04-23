@@ -38,13 +38,13 @@ LIMIT 3;
 -- Return both the city name and the sum of all invoice totals.
 SELECT
     billing_city,
-    SUM(total) invoice_total
+    SUM(total) invoices_total
 FROM
     invoices
 GROUP BY
     billing_city
 ORDER BY
-    invoice_total
+    invoices_total
 DESC
 LIMIT 1;
 
@@ -95,7 +95,7 @@ ORDER BY
 -- 7. Let's invite the artists who have written the most rock music in our dataset. 
 -- Write a query that returns the artist name and total track count of the top 10 rock artists.
 SELECT
-    artists.name,
+    artists.name artist_name,
     COUNT(tracks.track_id) total_tracks
 FROM
     tracks
